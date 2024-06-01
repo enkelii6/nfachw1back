@@ -1,7 +1,7 @@
 import express from 'express';
 import got from 'got';
 import mongoose from'mongoose';
-import {Post} from './Post.js';
+import Post from './Post.js';
 import bodyparser from 'body-parser';
 import cors from 'cors';
 
