@@ -3,19 +3,13 @@ import got from 'got';
 import mongoose from'mongoose';
 import Post from './Post.js';
 import bodyparser from 'body-parser';
+import cors from 'cors';
 
 const app = express();
 
 const DB_URL = 'mongodb+srv://user:user@cluster0.ijvxc0c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
-function setCorsHeaders(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    next();
-}
-
-app.use(setCorsHeaders());
+app.use(cors());
 app.use(bodyparser.json());
 
 async function startApp() {
